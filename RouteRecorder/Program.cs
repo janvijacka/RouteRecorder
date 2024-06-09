@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RouteRecorder.Models;
+using RouteRecorder.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("RoutesDbConnection"));
 });
+builder.Services.AddScoped<RouteService>();
 
 var app = builder.Build();
 

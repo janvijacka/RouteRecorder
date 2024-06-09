@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "se33CI+qfriVOxeMTqzq2XsWDrA2q4k6BBa+2t66/nv+jspEAK5n8UCSBOEwO8UyEJiAWiN/2ZLe0f4Ka4NXTQ==",
+  "dgSpecHash": "aH3FbZBjuuBcEtE0j6wSrJZYpT9rPfcBC+GfNP8s8+uce3YhXyJMinQ/rQPecXTAHPj5DKGOFW0Bo6nGNvePiA==",
   "success": true,
   "projectFilePath": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\RouteRecorder.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,9 @@
     "C:\\Users\\vijac\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\vijac\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\vijac\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\vijac\\.nuget\\packages\\nettopologysuite\\2.0.0\\nettopologysuite.2.0.0.nupkg.sha512",
+    "C:\\Users\\vijac\\.nuget\\packages\\nettopologysuite.features\\2.0.0\\nettopologysuite.features.2.0.0.nupkg.sha512",
+    "C:\\Users\\vijac\\.nuget\\packages\\nettopologysuite.io.gpx\\1.1.1\\nettopologysuite.io.gpx.1.1.1.nupkg.sha512",
     "C:\\Users\\vijac\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\vijac\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\vijac\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

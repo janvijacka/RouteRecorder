@@ -64,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "NetTopologySuite.IO.GPX": {
+              "target": "Package",
+              "version": "[1.1.1, )"
             }
           },
           "imports": [

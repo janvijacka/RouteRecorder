@@ -134,3 +134,7 @@ C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\runtimes\w
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\obj\Debug\net8.0\RouteRec.53F5727D.Up2Date
+C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\NetTopologySuite.dll
+C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\NetTopologySuite.Features.dll
+C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\NetTopologySuite.IO.GPX.dll
+C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\obj\Debug\net8.0\RouteRecorder.sourcelink.json

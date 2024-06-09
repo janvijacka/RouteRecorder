@@ -1,0 +1,16 @@
+﻿@using RouteRecorder.Models
+@model IEnumerable<Route>
+<h2>List of routes</h2>
+<a class="btn btn-info my-2" asp-action="AddRoute">Add Route</a>
+@foreach (var route in Model)
+{
+        <div class="border border-dark">
+            <h5>@route.Activity @route.Date</h5>
+            <p>@route.RouteId</p>
+            <p>@route.Person</p>
+            <a class="btn btn-warning mb-2" asp-action="Update" asp-route-id="@route.RouteId">Edit</a>
+            <form method="post">
+                <button type="submit" class="btn btn-danger mb-2" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
+            </form>
+        </div>
+}
