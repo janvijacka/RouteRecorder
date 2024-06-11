@@ -9,7 +9,7 @@ namespace RouteRecorder.Models
         public string? Activity { get; set; }
         [NotNull]
         public string? Person { get; set; }
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
         [NotNull]
         public List<Record>? Records { get; set; }
     }

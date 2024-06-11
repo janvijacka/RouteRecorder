@@ -13,6 +13,12 @@ namespace RouteRecorder.Services
             _context = context;
         }
 
+        public IEnumerable<Models.Route> GetRoutes()
+        {
+            var allRoutes = _context.Routes;
+            return allRoutes;
+        }
+
         public async Task SaveRouteFromGpx(Stream gpxFileStream)
         {
             XDocument gpxDocument = XDocument.Load(gpxFileStream);
@@ -21,12 +27,12 @@ namespace RouteRecorder.Services
             var trk = gpxDocument.Root.Element(ns + "trk");
             var activity = trk.Element(ns + "type")?.Value ?? "Unknown";
             var dateTimeString = metadata.Element(ns + "time").Value.Split("T")[0];
-            var dateTime = DateTime.ParseExact(dateTimeString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var date = DateOnly.ParseExact(dateTimeString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             var route = new Models.Route
             {
                 Activity = activity,
-                Date = dateTime,
+                Date = date,
                 Person = "Default",
                 Records = new List<Record>()
             };
