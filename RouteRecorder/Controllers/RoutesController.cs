@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RouteRecorder.Services;
-using RouteRecorder.Models;
+using RouteRecorder.DTO;
 
 namespace RouteRecorder.Controllers
 {
@@ -15,7 +15,7 @@ namespace RouteRecorder.Controllers
         
         public IActionResult Index()
         {
-            IEnumerable<Models.Route> allRoutes = _routeService.GetRoutes();
+            IEnumerable<RouteDTO> allRoutes = _routeService.GetRoutes();
             return View(allRoutes);
         }
 

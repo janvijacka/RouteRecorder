@@ -1,4 +1,5 @@
-﻿using RouteRecorder.Models;
+﻿using RouteRecorder.DTO;
+using RouteRecorder.Models;
 using System.Globalization;
 using System.Xml.Linq;
 
@@ -13,10 +14,43 @@ namespace RouteRecorder.Services
             _context = context;
         }
 
-        public IEnumerable<Models.Route> GetRoutes()
+        public IEnumerable<RouteDTO> GetRoutes()
         {
             var allRoutes = _context.Routes;
-            return allRoutes;
+            var allRoutesDtos = new List<RouteDTO>();
+            foreach (var route in allRoutes)
+            {
+                allRoutesDtos.Add(RouteModelToDto(route));
+            }
+            return allRoutesDtos;
+        }
+
+        private static RouteDTO RouteModelToDto(Models.Route route)
+        {
+            return new RouteDTO
+            {
+                RouteId = route.RouteId,
+                Activity = route.Activity,
+                Person = route.Person,
+                Date = route.Date,
+                Records = route.Records != null && route.Records.Count > 0 ? RecordModelToDto(route.Records) : new List<RecordDTO>()
+            };
+        }
+
+        private static List<RecordDTO> RecordModelToDto(List<Record> records)
+        {
+            var allRecordsDtos = new List<RecordDTO>();
+            foreach (var record in records)
+            {
+                allRecordsDtos.Add(new RecordDTO
+                {
+                    Latitude = record.Latitude,
+                    Longitude = record.Longitude,
+                    Elevation = record.Elevation,
+                    Time = record.Time,
+                }); 
+            }
+            return allRecordsDtos;
         }
 
         public async Task SaveRouteFromGpx(Stream gpxFileStream)
