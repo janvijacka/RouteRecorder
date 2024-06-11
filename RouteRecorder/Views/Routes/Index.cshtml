@@ -1,8 +1,8 @@
 ﻿@using RouteRecorder.Models
 @model IEnumerable<Route>
 <h2>List of routes</h2>
-<a class="btn btn-info my-2" asp-action="AddRoute">Add Route</a>
-@foreach (var route in Model)
+<a class="btn btn-info my-2" data-bs-toggle="modal" data-bs-target="#addRouteModal" asp-action="AddRoute">Add Route</a>
+@* @foreach (var route in Model)
 {
         <div class="border border-dark">
             <h5>@route.Activity @route.Date</h5>
@@ -13,4 +13,28 @@
                 <button type="submit" class="btn btn-danger mb-2" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
             </form>
         </div>
-}
+} *@
+
+@* Modal window for adding route *@
+<div class="modal fade" id="addRouteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Route</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> @* Možná by to chtělo z estetických důvodů odstranit křížek *@
+      </div>
+      <form method="post" enctype="multipart/form-data" asp-action="UploadGpx" asp-controller="Routes">
+          <div class="modal-body form-group">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Select .xml file with route data</label>
+              <input class="form-control" type="file" name="file" id="formFile">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input class="btn btn-primary" type="submit" value="Upload"/>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

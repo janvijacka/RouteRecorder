@@ -16,10 +16,11 @@ namespace RouteRecorder.Services
         public async Task SaveRouteFromGpx(Stream gpxFileStream)
         {
             XDocument gpxDocument = XDocument.Load(gpxFileStream);
-
-            var metadata = gpxDocument.Element("metadata");
-            var activity = gpxDocument.Element("trk").Element("type")?.Value ?? "Unknown";
-            var dateTimeString = metadata.Element("time").Value.Split("T")[0];
+            XNamespace ns = "http://www.topografix.com/GPX/1/1";
+            var metadata = gpxDocument.Root.Element(ns + "metadata");
+            var trk = gpxDocument.Root.Element(ns + "trk");
+            var activity = trk.Element(ns + "type")?.Value ?? "Unknown";
+            var dateTimeString = metadata.Element(ns + "time").Value.Split("T")[0];
             var dateTime = DateTime.ParseExact(dateTimeString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             var route = new Models.Route
@@ -30,13 +31,14 @@ namespace RouteRecorder.Services
                 Records = new List<Record>()
             };
 
-            var records = gpxDocument.Element("trk").Element("trkseg").Elements("trkpt");
+            var trkseg = trk.Element(ns + "trkseg");
+            var records = trkseg.Elements(ns + "trkpt");
             foreach ( var recordValue in records )
             {
-                var latitude = double.Parse(recordValue.Attribute("lat").Value);
-                var longtitude = double.Parse(recordValue.Attribute("lon").Value);
-                var elevation = double.Parse(recordValue.Element("ele").Value);
-                var recordTime = DateTime.Parse((string)recordValue.Element("time"));
+                var latitude = double.Parse(recordValue.Attribute("lat").Value, CultureInfo.InvariantCulture);
+                var longtitude = double.Parse(recordValue.Attribute("lon").Value, CultureInfo.InvariantCulture);
+                var elevation = double.Parse(recordValue.Element(ns +"ele").Value, CultureInfo.InvariantCulture);
+                var recordTime = DateTime.Parse((string)recordValue.Element(ns +"time"));
 
                 var record = new Record
                 {
