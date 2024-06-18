@@ -36,5 +36,17 @@ namespace RouteRecorder.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var routeToDelete = await _routeService.GetByIdAsync(id);
+            if (routeToDelete == null)
+            {
+                return RedirectToAction("Index"); //Dodělat vrácení chyby
+            }
+            await _routeService.DeleteAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }

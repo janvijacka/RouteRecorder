@@ -25,6 +25,38 @@ namespace RouteRecorder.Services
             return allRoutesDtos;
         }
 
+        internal async Task<RouteDTO> GetByIdAsync(int id)
+        {
+            var route = await VerifyExistenceAsync(id);
+            if (route == null)
+            {
+                return null;
+            }
+            return RouteModelToDto(route);
+        }
+
+        private async Task<Models.Route> VerifyExistenceAsync(int id)
+        {
+            var route = _context.Routes.FirstOrDefault(route => route.RouteId == id);
+            if (route == null)
+            {
+                return null;
+            }
+            return route;
+        }
+
+        internal async Task DeleteAsync(int id)
+        {
+            var routeToDelete = _context.Routes.FirstOrDefault(route => route.RouteId == id);
+            List<Record> recordsToDelete = _context.Records.Where(record => record.RouteId == id).ToList();
+            foreach (var record in recordsToDelete)
+            {
+                _context.Records.Remove(record);
+            }
+            _context.Routes.Remove(routeToDelete);
+            await _context.SaveChangesAsync();
+        }
+
         private static RouteDTO RouteModelToDto(Models.Route route)
         {
             return new RouteDTO
