@@ -1,4 +1,7 @@
-﻿using RouteRecorder.DTO;
+﻿using GeoCoordinatePortable;
+using Microsoft.AspNetCore.Routing;
+using NetTopologySuite.IO;
+using RouteRecorder.DTO;
 using RouteRecorder.Models;
 using System.Globalization;
 using System.Xml.Linq;
@@ -65,6 +68,9 @@ namespace RouteRecorder.Services
                 Activity = route.Activity,
                 Person = route.Person,
                 Date = route.Date,
+                Distance = route.Distance,
+                Time = route.Time,
+                AvgSpeed = route.AvgSpeed,
                 Records = route.Records != null && route.Records.Count > 0 ? RecordModelToDto(route.Records) : new List<RecordDTO>()
             };
         }
@@ -85,6 +91,37 @@ namespace RouteRecorder.Services
             return allRecordsDtos;
         }
 
+        private static Models.Route RouteDtoToModel(RouteDTO routeDTO)
+        {
+            return new Models.Route
+            {
+                RouteId = routeDTO.RouteId,
+                Activity = routeDTO.Activity,
+                Person = routeDTO.Person,
+                Date = routeDTO.Date,
+                Distance = routeDTO.Distance,
+                Time = routeDTO.Time,
+                AvgSpeed = routeDTO.AvgSpeed,
+                Records = routeDTO.Records != null && routeDTO.Records.Count > 0 ? RecordDtoToModel(routeDTO.Records) : new List<Record>()
+            };
+        }
+
+        private static List<Record> RecordDtoToModel(List<RecordDTO> recordsDtos)
+        {
+            var allRecords = new List<Record>();
+            foreach (var record in recordsDtos)
+            {
+                allRecords.Add(new Record
+                {
+                    Latitude = record.Latitude,
+                    Longitude = record.Longitude,
+                    Elevation = record.Elevation,
+                    Time = record.Time,
+                });
+            }
+            return allRecords;
+        }
+
         public async Task SaveRouteFromGpx(Stream gpxFileStream)
         {
             XDocument gpxDocument = XDocument.Load(gpxFileStream);
@@ -95,16 +132,19 @@ namespace RouteRecorder.Services
             var dateTimeString = metadata.Element(ns + "time").Value.Split("T")[0];
             var date = DateOnly.ParseExact(dateTimeString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-            var route = new Models.Route
+            var route = new RouteDTO
             {
                 Activity = activity,
                 Date = date,
                 Person = "Default",
-                Records = new List<Record>()
+                Records = new List<RecordDTO>()
             };
 
             var trkseg = trk.Element(ns + "trkseg");
             var records = trkseg.Elements(ns + "trkpt");
+            GeoCoordinate previousPoint = null;
+            double totalDistance = 0;
+
             foreach ( var recordValue in records )
             {
                 var latitude = double.Parse(recordValue.Attribute("lat").Value, CultureInfo.InvariantCulture);
@@ -112,7 +152,16 @@ namespace RouteRecorder.Services
                 var elevation = double.Parse(recordValue.Element(ns +"ele").Value, CultureInfo.InvariantCulture);
                 var recordTime = DateTime.Parse((string)recordValue.Element(ns +"time"));
 
-                var record = new Record
+                var currentPoint = new GeoCoordinate(latitude, longtitude, elevation);
+                if (previousPoint != null) 
+                {
+                    var distance = previousPoint.GetDistanceTo(currentPoint);
+                    totalDistance += distance;
+                }
+
+                previousPoint = currentPoint;
+
+                var record = new RecordDTO
                 {
                     Latitude = latitude,
                     Longitude = longtitude,
@@ -122,7 +171,12 @@ namespace RouteRecorder.Services
 
                 route.Records.Add(record);
             }
-            _context.Routes.Add(route);
+
+            route.Distance = (int)Math.Round(totalDistance);
+            route.Time = route.Records[route.Records.Count - 1].Time - route.Records[0].Time;
+            route.AvgSpeed = Math.Round((totalDistance / 1000) / ((double)route.Time.TotalHours), 2);
+
+            _context.Routes.Add(RouteDtoToModel(route));
             await _context.SaveChangesAsync();
         }
     }

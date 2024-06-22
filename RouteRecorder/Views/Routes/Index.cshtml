@@ -11,6 +11,9 @@
             <h5>@route.Activity @route.Date</h5>
             <p>@route.RouteId</p>
             <p>@route.Person</p>
+            <p>@route.Distance m</p>
+            <p>@route.Time</p>
+            <p>@route.AvgSpeed km/h</p>
             <div class="d-flex flex-row mb-3">
                 <a class="btn btn-warning me-2" asp-action="Update" asp-route-id="@route.RouteId">Edit</a>
                 <form method="post">
