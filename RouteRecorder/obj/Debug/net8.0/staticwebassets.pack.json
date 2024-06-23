@@ -17,6 +17,58 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\images\\layers-2x.png",
+      "PackagePath": "staticwebassets\\leaflet\\images\\layers-2x.png"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\images\\layers.png",
+      "PackagePath": "staticwebassets\\leaflet\\images\\layers.png"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\images\\marker-icon-2x.png",
+      "PackagePath": "staticwebassets\\leaflet\\images\\marker-icon-2x.png"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\images\\marker-icon.png",
+      "PackagePath": "staticwebassets\\leaflet\\images\\marker-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\images\\marker-shadow.png",
+      "PackagePath": "staticwebassets\\leaflet\\images\\marker-shadow.png"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet-src.js",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet-src.js"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet-src.js.map",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet-src.js.map"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet-src.min.js",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet-src.min.js"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet.css",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet.css"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet.js",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet.js"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet.js.map",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet.js.map"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet.min.css",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet.min.css"
+    },
+    {
+      "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\leaflet\\leaflet.min.js",
+      "PackagePath": "staticwebassets\\leaflet\\leaflet.min.js"
+    },
+    {
       "Id": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

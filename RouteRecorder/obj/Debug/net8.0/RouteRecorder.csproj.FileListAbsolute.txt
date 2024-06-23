@@ -139,3 +139,4 @@ C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\NetTopolog
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\NetTopologySuite.IO.GPX.dll
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\obj\Debug\net8.0\RouteRecorder.sourcelink.json
 C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\GeoCoordinate.NetCore.dll
+C:\Users\vijac\Documents\RouteRecorder\RouteRecorder\bin\Debug\net8.0\libman.json

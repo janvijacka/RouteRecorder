@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\vijac\\Documents\\RouteRecorder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\controllers\\routescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\controllers\\routescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\views\\shared\\showmap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\views\\shared\\showmap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\views\\routes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\views\\routes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\models\\record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\models\\record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\models\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\models\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\dto\\routedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\dto\\routedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\controllers\\routescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\controllers\\routescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|c:\\users\\vijac\\documents\\routerecorder\\routerecorder\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5340799-9DF6-488A-B0E2-576E2F1DC0A1}|RouteRecorder\\RouteRecorder.csproj|solutionrelative:routerecorder\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,37 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 10,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20240622124305_addedAvgSpeed.cs",
-              "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs",
-              "RelativeDocumentMoniker": "RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs",
-              "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs",
-              "RelativeToolTip": "RouteRecorder\\Migrations\\20240622124305_addedAvgSpeed.cs",
+              "DocumentIndex": 2,
+              "Title": "Record.cs",
+              "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Models\\Record.cs",
+              "RelativeDocumentMoniker": "RouteRecorder\\Models\\Record.cs",
+              "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Models\\Record.cs",
+              "RelativeToolTip": "RouteRecorder\\Models\\Record.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T12:43:05.48Z",
+              "WhenOpened": "2024-06-23T09:05:15.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RouteDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\DTO\\RouteDTO.cs",
-              "RelativeDocumentMoniker": "RouteRecorder\\DTO\\RouteDTO.cs",
-              "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\DTO\\RouteDTO.cs",
-              "RelativeToolTip": "RouteRecorder\\DTO\\RouteDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T09:46:27.609Z",
+              "DocumentIndex": 0,
+              "Title": "ShowMap.cshtml",
+              "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Views\\Shared\\ShowMap.cshtml",
+              "RelativeDocumentMoniker": "RouteRecorder\\Views\\Shared\\ShowMap.cshtml",
+              "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Views\\Shared\\ShowMap.cshtml",
+              "RelativeToolTip": "RouteRecorder\\Views\\Shared\\ShowMap.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-23T07:29:15.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Route.cs",
               "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Models\\Route.cs",
               "RelativeDocumentMoniker": "RouteRecorder\\Models\\Route.cs",
@@ -77,39 +77,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Views\\Routes\\Index.cshtml",
               "RelativeDocumentMoniker": "RouteRecorder\\Views\\Routes\\Index.cshtml",
               "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Views\\Routes\\Index.cshtml",
               "RelativeToolTip": "RouteRecorder\\Views\\Routes\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxMAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-18T17:13:24.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RoutesController.cs",
               "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Controllers\\RoutesController.cs",
               "RelativeDocumentMoniker": "RouteRecorder\\Controllers\\RoutesController.cs",
               "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Controllers\\RoutesController.cs",
               "RelativeToolTip": "RouteRecorder\\Controllers\\RoutesController.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAcwC0AAABJAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwDsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T11:49:24.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "RouteService.cs",
               "DocumentMoniker": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Services\\RouteService.cs",
               "RelativeDocumentMoniker": "RouteRecorder\\Services\\RouteService.cs",
               "ToolTip": "C:\\Users\\vijac\\Documents\\RouteRecorder\\RouteRecorder\\Services\\RouteService.cs",
               "RelativeToolTip": "RouteRecorder\\Services\\RouteService.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAUwKoAAAAAAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T11:14:38.922Z",
               "EditorCaption": ""

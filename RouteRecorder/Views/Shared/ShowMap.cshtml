@@ -1,0 +1,34 @@
+﻿@using RouteRecorder.DTO
+@model RouteDTO;
+
+@{
+    ViewData["Title"] = "Map";
+    
+}
+<h1>Route map</h1>
+<a asp-action="Index" class="btn btn-secondary pt-2">Back</a>
+<div class="pt-2">
+    <div id="map" style="height: 600px;"></div>
+    @section Scripts {
+        <script src="~/leaflet/leaflet.js"></script>
+        <script>
+            var points = @Html.Raw(Json.Serialize(ViewBag.Points));
+            var map = L.map('map').setView([points[0].latitude, points[0].longitude], 16);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+
+            var polylinePoints = [];
+            for (var i = 0; i < points.length; i++) {
+                var latLng = [points[i].latitude, points[i].longitude];
+                polylinePoints.push(latLng);
+                //L.marker(latLng).addTo(map); Show markers on map
+            }
+            L.polyline(polylinePoints, { color: "blue" }).addTo(map);
+        </script>
+    }
+</div>
+<link rel="stylesheet" href="~/leaflet/leaflet.css" />

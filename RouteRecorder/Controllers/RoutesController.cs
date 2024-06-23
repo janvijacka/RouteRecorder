@@ -48,5 +48,16 @@ namespace RouteRecorder.Controllers
             await _routeService.DeleteAsync(id);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> ShowMap(int id)
+        {
+            var routeToShow = await _routeService.GetByIdAsync(id);
+            if (routeToShow == null)
+            {
+                return RedirectToAction("Index"); //Dodělat vrácení chyby
+            }
+            ViewBag.Points = _routeService.GetPoints(routeToShow);
+            return View("ShowMap");
+        }
     }
 }

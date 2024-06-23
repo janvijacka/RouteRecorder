@@ -1,5 +1,6 @@
 ﻿using GeoCoordinatePortable;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.IO;
 using RouteRecorder.DTO;
 using RouteRecorder.Models;
@@ -40,7 +41,9 @@ namespace RouteRecorder.Services
 
         private async Task<Models.Route> VerifyExistenceAsync(int id)
         {
-            var route = _context.Routes.FirstOrDefault(route => route.RouteId == id);
+            var route = _context.Routes
+                .Include(r => r.Records)
+                .FirstOrDefault(route => route.RouteId == id);
             if (route == null)
             {
                 return null;
@@ -178,6 +181,17 @@ namespace RouteRecorder.Services
 
             _context.Routes.Add(RouteDtoToModel(route));
             await _context.SaveChangesAsync();
+        }
+
+        public List<object> GetPoints(RouteDTO routeDto)
+        {
+            var points = new List<object>();
+            foreach (var record in routeDto.Records) 
+            {
+                var point = new {latitude = record.Latitude, longitude = record.Longitude};
+                points.Add(point);
+            }
+            return points;
         }
     }
 }
