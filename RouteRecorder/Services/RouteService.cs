@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.IO;
 using RouteRecorder.DTO;
 using RouteRecorder.Models;
+using RouteRecorder.ViewModels;
 using System.Globalization;
 using System.Xml.Linq;
 
@@ -18,15 +19,15 @@ namespace RouteRecorder.Services
             _context = context;
         }
 
-        public IEnumerable<RouteDTO> GetRoutes()
+        public IEnumerable<RouteViewModel> GetRoutes()
         {
             var allRoutes = _context.Routes;
-            var allRoutesDtos = new List<RouteDTO>();
+            var allRoutesViewModels = new List<RouteViewModel>();
             foreach (var route in allRoutes)
             {
-                allRoutesDtos.Add(RouteModelToDto(route));
+                allRoutesViewModels.Add(RouteModelToViewModel(route));
             }
-            return allRoutesDtos;
+            return allRoutesViewModels;
         }
 
         internal async Task<RouteDTO> GetByIdAsync(int id)
@@ -61,6 +62,20 @@ namespace RouteRecorder.Services
             }
             _context.Routes.Remove(routeToDelete);
             await _context.SaveChangesAsync();
+        }
+
+        private static RouteViewModel RouteModelToViewModel(Models.Route route)
+        {
+            return new RouteViewModel
+            {
+                RouteId = route.RouteId,
+                Activity = route.Activity,
+                Person = route.Person,
+                Date = route.Date,
+                Distance = route.Distance,
+                Time = route.Time,
+                AvgSpeed = route.AvgSpeed,
+            };
         }
 
         private static RouteDTO RouteModelToDto(Models.Route route)
