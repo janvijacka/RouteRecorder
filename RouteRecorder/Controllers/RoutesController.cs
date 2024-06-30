@@ -7,16 +7,18 @@ namespace RouteRecorder.Controllers
     public class RoutesController : Controller
     {
         public RouteService _routeService;
+        private const int PageSize = 10;
 
         public RoutesController(RouteService routeService)
         {
             _routeService = routeService;
         }
         
-        public IActionResult Index()
+        public IActionResult Index(int? pageNumber)
         {
             IEnumerable<RouteViewModel> allRoutes = _routeService.GetRoutes();
-            return View(allRoutes);
+            var paginatedRoutes = PaginatedList<RouteViewModel>.CreatePaginatedList(allRoutes, pageNumber ?? 1, PageSize);
+            return View(paginatedRoutes);
         }
 
         
