@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RouteRecorder.Models;
 using RouteRecorder.ViewModels;
@@ -13,12 +14,7 @@ namespace RouteRecorder.Controllers
 
         public IActionResult Index()
         {
-            var model = new UsersViewModel
-            {
-                Users = _userManager.Users,
-                AddUser = new UserViewModel()
-            };
-            return View(model);
+            return View(_userManager.Users);
         }
 
         public UsersController(UserManager<AppUser> userManager, IPasswordHasher<AppUser> passwordHasher, IPasswordValidator<AppUser> passwordValidator)
@@ -26,6 +22,42 @@ namespace RouteRecorder.Controllers
             _userManager = userManager;
             _passwordHasher = passwordHasher;
             _passwordValidator = passwordValidator;
+        }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(UserViewModel userViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser newUser = new AppUser
+                {
+                    UserName = userViewModel.Username,
+                    Email = userViewModel.Email,
+                };
+                IdentityResult result = await _userManager.CreateAsync(newUser, userViewModel.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+            return View(userViewModel);
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors) 
+            {
+                ModelState.AddModelError("", error.Description);
+            }
         }
     }
 }

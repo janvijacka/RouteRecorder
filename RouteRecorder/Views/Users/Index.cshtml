@@ -1,11 +1,8 @@
-﻿@using RouteRecorder.ViewModels
-@model UsersViewModel
-
-@{
+﻿@{
     ViewData["Title"] = "Users";
 }
 <h1>All Users</h1>
-<a asp-action="Create" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">Add User</a>
+<a asp-action="Add" class="btn btn-primary">Add User</a>
 <div class="d-flex flex-column">
     <div class="row">
         <div class="col-12 col-xl-11 col-xxl-10">
@@ -16,7 +13,7 @@
                     <th class="text-center">Email</th>
                     <th></th>
                 </tr>
-                @foreach (AppUser user in Model.Users)
+                @foreach (AppUser user in Model)
                 {
                     <tr>
                         <td class="text-center">@user.Id</td>
@@ -33,29 +30,6 @@
                     </tr>
                 }
             </table>
-        </div>
-    </div>
-</div>
-
-@* Modal window for adding user *@
-<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
-            </div>
-            <form method="post" asp-action="AddUser" asp-controller="Users">
-                <div class="modal-body form-group">
-                    <div class="mb-3">
-                        <label asp-for="AddUser.Username"></label>
-                        <input asp-for="AddUser.Username" class="form-control" />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input class="btn btn-primary" type="submit" value="Add" />
-                </div>
-            </form>
         </div>
     </div>
 </div>

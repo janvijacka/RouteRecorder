@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteRecorder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b8c48ec32e93fb6e8626f6f4d9975362208f23a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f514313e72b1428a3888ae4d66649e453c754b91")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteRecorder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteRecorder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
