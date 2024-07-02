@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RouteRecorder.Models;
 using RouteRecorder.Services;
@@ -6,11 +7,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(option =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    option.UseSqlServer(builder.Configuration.GetConnectionString("RoutesDbConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RoutesDbConnection"));
 });
 builder.Services.AddScoped<RouteService>();
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+builder.Services.Configure<IdentityOptions>(options => {
+    options.Password.RequireDigit = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+});
+
 
 var app = builder.Build();
 
