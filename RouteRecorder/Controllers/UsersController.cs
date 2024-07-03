@@ -52,6 +52,29 @@ namespace RouteRecorder.Controllers
             return View(userViewModel);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            AppUser userToDelete = await _userManager.FindByIdAsync(id);
+            if (userToDelete != null)
+            {
+                var result = await _userManager.DeleteAsync(userToDelete);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "User not found!");
+            }
+            return View("Index");
+        }
+
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors) 
