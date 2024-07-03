@@ -2,31 +2,32 @@
     ViewData["Title"] = "Users";
 }
 <h1>All Users</h1>
-<a asp-action="Add" class="btn btn-primary">Add User</a>
+<a asp-action="Add" class="btn btn-primary me-2">Add User</a>
+<a asp-action="Index" asp-controller="Roles" class="btn btn-primary">Roles</a>
 <div class="d-flex flex-column">
     <div class="row">
         <div class="col-12 col-xl-11 col-xxl-10">
             <table class="table mt-3">
                 <tr>
-                    <th class="text-center">ID</th>
                     <th class="text-center">Name</th>
                     <th class="text-center">Email</th>
-                    <th></th>
+                    <th class="text-center">Actions</th>
+                    <th class="text-center">ID</th>
                 </tr>
                 @foreach (AppUser user in Model)
                 {
                     <tr>
-                        <td class="text-center">@user.Id</td>
                         <td class="text-center">@user.UserName</td>
                         <td class="text-center">@user.Email</td>
-                        <td>
-                            <div class="d-flex flex-row">
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
                                 <a class="btn btn-sm btn-primary me-2" asp-action="Update" asp-route-id="@user.Id">Update</a>
                                 <form asp-action="Delete" asp-route-id="@user.Id" method="post">
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                             </div>
                         </td>
+                        <td class="text-center">@user.Id</td>
                     </tr>
                 }
             </table>

@@ -18,7 +18,7 @@
                         <th class="text-center">Distance [m]</th>
                         <th class="text-center">Time</th>
                         <th class="text-center">Average speed [km/h]</th>
-                        <th></th>
+                        <th class="text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,11 +31,11 @@
                         <td class="text-center">@route.Distance</td>
                         <td class="text-center"> @route.Time</td>
                         <td class="text-center">@route.AvgSpeed</td>
-                        <td>
-                            <div class="d-flex flex-row">
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
                                 <a class="btn btn-success me-2" asp-action="ShowMap" asp-route-id="@route.RouteId">Map</a>
                                 <form method="post">
-                                    <button type="submit" class="btn btn-warning" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
+                                    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
                                 </form>
                             </div>
                         </td>

@@ -18,12 +18,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\vijac\Documents\RouteRecorder\RouteRecorder
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Home/Info.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Roles/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Roles/Assign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQXNzaWduLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Routes/Index.cshtml]
@@ -32,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Shared/ShowMap.cshtml]
@@ -48,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/Users/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vijac/Documents/RouteRecorder/RouteRecorder/Views/_ViewImports.cshtml]

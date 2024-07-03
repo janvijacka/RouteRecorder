@@ -59,7 +59,8 @@ namespace RouteRecorder.Controllers
                 return RedirectToAction("Index"); //Dodělat vrácení chyby
             }
             ViewBag.Points = _routeService.GetPoints(routeToShow);
-            return View("ShowMap");
+            var routeToShowViewModel = await _routeService.GetVMByIdAsync(id);
+            return View("ShowMap", routeToShowViewModel);
         }
     }
 }

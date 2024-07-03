@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RouteRecorder.Models;
 using System.Diagnostics;
@@ -7,18 +9,22 @@ namespace RouteRecorder.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private UserManager<AppUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
         {
             _logger = logger;
+            _userManager = userManager;
         }
 
-        public IActionResult Index()
+        [Authorize]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            AppUser signedInUser = await _userManager.GetUserAsync(HttpContext.User);
+            return View("Index", signedInUser.UserName);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Info()
         {
             return View();
         }

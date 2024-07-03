@@ -30,7 +30,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(UserViewModel userViewModel)
+        public async Task<IActionResult> AddAsync(UserViewModel userViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
             AppUser userToDelete = await _userManager.FindByIdAsync(id);
             if (userToDelete != null)
@@ -73,6 +73,53 @@ namespace RouteRecorder.Controllers
                 ModelState.AddModelError("", "User not found!");
             }
             return View("Index");
+        }
+
+        public async Task<IActionResult> UpdateAsync(string id)
+        {
+            AppUser userToUpdate = await _userManager.FindByIdAsync(id);
+            if (userToUpdate == null)
+            {
+                return View("NotFound");
+            }
+            return View(userToUpdate);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateAsync(string id, string email, string password)
+        {
+            AppUser userToUpdate = await _userManager.FindByIdAsync(id);
+            if (userToUpdate != null)
+            {
+                IdentityResult validPassword;
+                if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password)) 
+                {
+                    userToUpdate.Email = email;
+                    validPassword = await _passwordValidator.ValidateAsync(_userManager, userToUpdate, password);
+                    if (validPassword.Succeeded) 
+                    {
+                        userToUpdate.PasswordHash = _passwordHasher.HashPassword(userToUpdate, password);
+                        IdentityResult result = await _userManager.UpdateAsync(userToUpdate);
+                        if (result.Succeeded) 
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            AddErrors(result);
+                        }
+                    }
+                    else
+                    {
+                        AddErrors(validPassword);
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "User not found!");
+            }
+            return View(userToUpdate);
         }
 
         private void AddErrors(IdentityResult result)

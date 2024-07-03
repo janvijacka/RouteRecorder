@@ -1,7 +1,5 @@
 ﻿using GeoCoordinatePortable;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
-using NetTopologySuite.IO;
 using RouteRecorder.DTO;
 using RouteRecorder.Models;
 using RouteRecorder.ViewModels;
@@ -38,6 +36,16 @@ namespace RouteRecorder.Services
                 return null;
             }
             return RouteModelToDto(route);
+        }
+
+        internal async Task<RouteViewModel> GetVMByIdAsync(int id)
+        {
+            var route = await VerifyExistenceAsync(id);
+            if (route == null)
+            {
+                return null;
+            }
+            return RouteModelToViewModel(route);
         }
 
         private async Task<Models.Route> VerifyExistenceAsync(int id)

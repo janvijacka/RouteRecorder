@@ -1,0 +1,25 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Add role";
+}
+<div class="d-flex flex-column">
+    <div class="row">
+        <div class="col-9 col-md-7 col-xl-5 col-xxl-4">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <h1>Add role</h1>
+            <form method="post">
+                <div class="modal-body form-group">
+                    <div>
+                        <label for="name">Name</label>
+                        <input name="name" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a asp-action="Index" class="btn btn-secondary">Back</a>
+                    <input class="btn btn-primary" type="submit" value="Add" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

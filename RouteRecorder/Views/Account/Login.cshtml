@@ -1,0 +1,29 @@
+﻿@using RouteRecorder.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="d-flex flex-column">
+    <div class="row">
+        <div class="col-9 col-md-7 col-xl-5 col-xxl-4">
+            <h1>Login</h1>
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <form class="row justify-content-start d-flex flex-column" asp-action="Login" method="post">
+                <div>
+                    <input type="hidden" asp-for="ReturnUrl" />
+                    <div class="form-group">
+                        <label asp-for="Username"></label>
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" type="password" />
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary mt-3" type="submit">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
