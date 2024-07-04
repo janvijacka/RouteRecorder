@@ -21,4 +21,12 @@
     <PackageReference Include="NetTopologySuite.IO.GPX" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\AccessDenied.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\AccessDenied.cshtml" />
+  </ItemGroup>
+
 </Project>

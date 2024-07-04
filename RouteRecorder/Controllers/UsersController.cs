@@ -12,10 +12,7 @@ namespace RouteRecorder.Controllers
         private IPasswordHasher<AppUser> _passwordHasher;
         private IPasswordValidator<AppUser> _passwordValidator;
 
-        public IActionResult Index()
-        {
-            return View(_userManager.Users);
-        }
+        
 
         public UsersController(UserManager<AppUser> userManager, IPasswordHasher<AppUser> passwordHasher, IPasswordValidator<AppUser> passwordValidator)
         {
@@ -24,12 +21,20 @@ namespace RouteRecorder.Controllers
             _passwordValidator = passwordValidator;
         }
 
+        [Authorize(Roles = "Admin")]
+        public IActionResult Index()
+        {
+            return View(_userManager.Users);
+        }
+        
+        [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddAsync(UserViewModel userViewModel)
         {
             if (ModelState.IsValid)
@@ -53,6 +58,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAsync(string id)
         {
             AppUser userToDelete = await _userManager.FindByIdAsync(id);
@@ -75,6 +81,7 @@ namespace RouteRecorder.Controllers
             return View("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateAsync(string id)
         {
             AppUser userToUpdate = await _userManager.FindByIdAsync(id);
@@ -86,6 +93,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateAsync(string id, string email, string password)
         {
             AppUser userToUpdate = await _userManager.FindByIdAsync(id);

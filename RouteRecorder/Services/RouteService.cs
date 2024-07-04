@@ -148,7 +148,7 @@ namespace RouteRecorder.Services
             return allRecords;
         }
 
-        public async Task SaveRouteFromGpx(Stream gpxFileStream)
+        public async Task SaveRouteFromGpx(Stream gpxFileStream, string username)
         {
             XDocument gpxDocument = XDocument.Load(gpxFileStream);
             XNamespace ns = "http://www.topografix.com/GPX/1/1";
@@ -162,7 +162,7 @@ namespace RouteRecorder.Services
             {
                 Activity = activity,
                 Date = date,
-                Person = "Default",
+                Person = username,
                 Records = new List<RecordDTO>()
             };
 

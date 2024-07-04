@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RouteRecorder.Models;
 
@@ -15,11 +16,13 @@ namespace RouteRecorder.Controllers
             _userManager = userManager;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View(_roleManager.Roles.OrderBy(r => r.Name).ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddAsync(string name)
         {
             if (ModelState.IsValid)
@@ -38,6 +41,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAsync(string id)
         {
             var roleToDelte = await _roleManager.FindByIdAsync(id);
@@ -57,6 +61,7 @@ namespace RouteRecorder.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AssignAsync(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);
@@ -76,6 +81,7 @@ namespace RouteRecorder.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AssignAsync(RoleModifications roleModifications)
         {
             AppUser user;

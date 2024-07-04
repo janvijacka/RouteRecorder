@@ -4,7 +4,10 @@
 <h2>List of routes</h2>
 
 @* Button for modal window *@
-<a class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#addRouteModal" asp-action="AddRoute">Add Route</a>
+@if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("User")))
+{
+    <a class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#addRouteModal" asp-action="AddRoute">Add Route</a>
+}
 
 <div class="d-flex flex-column">
     <div class="row">
@@ -34,9 +37,12 @@
                         <td class="text-center">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-success me-2" asp-action="ShowMap" asp-route-id="@route.RouteId">Map</a>
-                                <form method="post">
-                                    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
-                                </form>
+                                    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("User")))
+                                {
+                                    <form method="post">
+                                        <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@route.RouteId">Delete</button>
+                                    </form>
+                                }
                             </div>
                         </td>
                     </tr>
